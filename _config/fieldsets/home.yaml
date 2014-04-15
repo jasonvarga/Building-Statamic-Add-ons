@@ -1,0 +1,12 @@
+fields:
+  tweet:
+    type: bluebird
+    display: Tweet
+    required: no
+    instructions: Choose a tweet
+    count: 50
+    screen_name: jason_varga
+    include_rts: true
+    include_entities: true
+    exclude_replies: false
+    cache_length: 60

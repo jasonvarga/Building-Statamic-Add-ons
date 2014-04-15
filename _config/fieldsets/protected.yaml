@@ -1,0 +1,6 @@
+title: Protected page
+fields:
+  karma_protect:
+    type: karma
+    display: Karma Points
+    instructions: Configure the access level for this page.
