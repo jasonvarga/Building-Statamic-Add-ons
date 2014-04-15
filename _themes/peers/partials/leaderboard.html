@@ -1,0 +1,21 @@
+<div class="leaderboard">
+	<h3>Leaderboard</h3>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Member</th>
+				<th>Points</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{ karma:members }}
+			<tr>
+				<td><a href="/member/profile/{{ username }}">{{ first_name }}</a></td>
+				<td>{{ points }}</td>
+			</tr>
+			{{ /karma:members }}
+		</tbody>
+	</table>
+
+</div>

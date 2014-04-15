@@ -1,0 +1,21 @@
+{{ member:profile username="{ segment_3 }" }}
+	<h2>{{ first_name }}</h2>
+
+	<p>Karma points: {{ karma:points username="{username}" }}</p>
+
+	{{ if twitter }}
+		<p>Twitter: @{{ twitter }}</p>
+
+		{{ bluebird screen_name="{ twitter }" count="2" }}
+			<ul class="tweets">
+			{{ tweets }}
+				<li>
+					<p>{{ text }}</p>
+					<small><a href="{{ tweet_url }}">{{ created_at format="F jS, Y" }}</a></small>
+				</li>
+			{{ /tweets }}
+			</ul>
+		{{ /bluebird }}
+
+	{{ endif }}
+{{ /member:profile }}

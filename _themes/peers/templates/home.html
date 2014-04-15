@@ -1,0 +1,16 @@
+{{ content }}
+
+{{ tweet|bluebird }}<br />
+<a href="{{ tweet|bluebird:raw }}">View tweet</a>
+
+{{ bluebird:tweet id="{{ tweet }}" }}
+	<ul class="tweets">
+		<li>
+			<p>{{ text }}</p>
+			<small>
+				Tweeted by <a href="https://twitter.com/{{ user:screen_name }}">@{{ user:screen_name }}</a>
+				on <a href="{{ tweet_url }}">{{ created_at format="F jS, Y" }}</a>
+			</small>
+		</li>
+	</ul>
+{{ /bluebird:tweet }}

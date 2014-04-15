@@ -1,0 +1,24 @@
+<h2>{{ title }}</h2>
+
+{{ if {karma:give_points_success} }}
+	<p class="message">Done!</p>
+{{ endif }}
+
+{{ karma:give_points_form exclude_me="yes" }}
+	<div class="points">
+		<label for="points">Number of points</label>
+		<input type="number" name="points" id="points" />
+	</div>
+	<div class="member">
+		<label for="member">To whom?</label>
+		<select name="member" id="member">
+		{{ members }}
+			<option value="{{ username }}">{{ first_name }} ({{ points }}pts)</option>
+		{{ /members }}
+		</select>
+	</div>
+	<div class="action">
+		<input type="submit" value="Give points" />
+	</div>
+	<p><b>{{ my_name }}</b>, if you're nice to your peers, your peers will be nice to you.</p>
+{{ /karma:give_points_form }}

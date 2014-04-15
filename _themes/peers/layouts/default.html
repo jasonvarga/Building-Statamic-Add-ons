@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ _site_name }}</title>
+	{{ theme:css tag="yes" }}
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,800" rel="stylesheet" />
+</head>
+<body>
+
+	<header>
+		<div class="wrap">
+			<h1><a href="/">{{ _site_name }}</a></h1>
+			<div class="user">
+			{{ if logged_in }}
+				Logged in as {{ username }} / <a href="{{ member:logout_url return='member/login' }}">Log out</a>
+			{{ else }}
+				<a href="/member/login?return={{ current_url }}">Log in</a>
+			{{ endif }}
+			</div>
+		</div>
+	</header>
+
+	<section class="main">
+		<div class="wrap">
+			<section class="content">
+				{{ layout_content }}
+			</section>
+			<aside>
+				<nav>
+					<ul>
+						<li {{ unless segment_1 }}class="current"{{ endif }}><a href="/">Home</a></li>
+						{{ nav from="/" max_depth="4" folders_only="no" exclude="no-access|member|give-karma" }}
+							<li {{ if is_current }}class="current"{{ endif }}>
+								<a href="{{ url }}">{{ title }}</a>
+								{{ if children }}
+									<ul>{{ *recursive children* }}</ul>
+								{{ endif }}
+							</li>
+						{{ /nav }}
+					</ul>
+				</nav>
+				{{ theme:partial src="allowed_pages" }}
+				<a href="/give-karma" class="button">Give Karma!</a>
+				{{ theme:partial src="leaderboard" }}
+			</aside>
+		</div>
+	</section>
+
+</body>
+</html>

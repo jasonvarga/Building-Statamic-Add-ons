@@ -1,0 +1,19 @@
+<nav class="allowed-pages">
+	{{ karma:allowed_pages }}
+		{{ if no_results }}
+			<p>You can't access any protected pages.</p>
+		{{ else }}
+			{{ if first }}
+				<ul>
+			{{ endif }}
+					<li>
+						<a href="{{ url }}">
+							{{ title }} <small>({{ rule }})</small>
+						</a>
+					</li>
+			{{ if last }}
+				</ul>
+			{{ endif }}
+		{{ endif }}
+	{{ /karma:allowed_pages }}
+</nav>
