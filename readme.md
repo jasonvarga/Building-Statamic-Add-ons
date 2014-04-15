@@ -7,7 +7,8 @@
 1. Grab a copy of Statamic 1.7.5 and install it to your local machine. Get it running on a local environment like MAMP.
 2. Delete the `denali` and `acadia` theme folders.
 3. Copy across `_themes/peers` to the `_themes` folder.
-4. Delete the bundled fieldsets in `_config/fieldsets` and replace them with the ones in this repo's `_config/fieldsets`.
+4. Replace the `_content` folder.
+4. Replace the `_config/fieldsets` folder.
 5. Edit your `settings.yaml` to point to your `peers` theme.
 6. Overwrite `_app/core/extend/addon.php` with `_resources/addon.php`. This fixes a bug in 1.7.5
 7. Copy `resources/bluebird.yaml` to `_config/add-ons/bluebird.yaml`
