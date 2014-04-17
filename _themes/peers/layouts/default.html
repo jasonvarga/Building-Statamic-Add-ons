@@ -13,7 +13,8 @@
 			<h1><a href="/">{{ _site_name }}</a></h1>
 			<div class="user">
 			{{ if logged_in }}
-				Logged in as {{ username }} / <a href="{{ member:logout_url return='member/login' }}">Log out</a>
+				Logged in as <a href="/member/profile/{{ username }}">{{ username }}</a>
+				/ <a href="{{ member:logout_url return='member/login' }}">Log out</a>
 			{{ else }}
 				<a href="/member/login?return={{ current_url }}">Log in</a>
 			{{ endif }}
