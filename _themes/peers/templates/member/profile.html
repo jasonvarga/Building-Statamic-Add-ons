@@ -1,3 +1,7 @@
+{{ unless segment_2 }}
+	{{ redirect to="/member/profile/{{ username }}" }}
+{{ endif }}
+
 {{ member:profile username="{ segment_3 }" }}
 	<h2>{{ first_name }}</h2>
 
