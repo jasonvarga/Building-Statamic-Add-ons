@@ -1,0 +1,2 @@
+routes:
+  /member/profile/*: member/profile
