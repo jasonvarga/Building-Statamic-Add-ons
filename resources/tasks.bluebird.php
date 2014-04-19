@@ -103,6 +103,7 @@ class Tasks_bluebird extends Tasks
 		$r = array();
 		ksort($params);
 		foreach ($params as $key=>$value) {
+			$value = ($value == false) ? 0 : $value; // ensure falses becomes 0
 			$r[] = "$key=" . rawurlencode($value);
 		}
 		return $method."&" . rawurlencode($baseURI) . '&' . rawurlencode(implode('&', $r)); //return complete base string
