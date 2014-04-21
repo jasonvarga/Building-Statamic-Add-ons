@@ -11,8 +11,12 @@ class Fieldtype_karma extends Fieldtype
 		$name = 'page[yaml][_protect][allow][_addon]';
 
 		// Since we're not editing our actual fieldset assigned field - we need to get the content of the entry
-		$url = $this->getURL();
-		$content = Content::get($url);
+		if (Request::get('new')) {
+			$content = array();
+		} else {
+			$url = $this->getURL();
+			$content = Content::get($url);
+		}
 
 		// Get the existing values and fall back to blanks.
 		if (isset($content['_protect'])) {
