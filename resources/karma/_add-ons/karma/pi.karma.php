@@ -118,7 +118,7 @@ class Plugin_karma extends Plugin
 		// Filter out pages we don't have access to
 		$content_set->customFilter(function($entry) use ($points) {
 			$protect = $entry['_protect']['allow']['_addon'];
-			return (version_compare($points, $protect['value'], $protect['comparison']));
+			return version_compare($points, $protect['value'], $protect['comparison']);
 		});
 
 		// Supplement with points variable
