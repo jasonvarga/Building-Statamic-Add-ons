@@ -20,7 +20,7 @@ class Fieldtype_karma extends Fieldtype
 
 		// Get the existing values and fall back to blanks.
 		if (isset($content['_protect'])) {
-			$data = $content['_protect']['allow']['_addon'];
+			$data = array_get($content, '_protect:allow:_addon');
 		} else {
 			$data = array(
 				'comparison' => '',
